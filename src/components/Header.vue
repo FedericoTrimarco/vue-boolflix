@@ -1,5 +1,5 @@
 <template>
-    <header class="border container">
+    <header class="container">
             <input v-model.trim="searchFilm" type="text" placeholder="search movie" @keyup.enter="$emit('search', searchFilm)">
             <button @click="$emit('search', searchFilm)">Invio</button>
     </header>

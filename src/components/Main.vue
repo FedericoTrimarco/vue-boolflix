@@ -1,5 +1,5 @@
 <template>
-    <main class="container border mt-3">
+    <main class="container mt-3">
         <cardProp 
             v-for="(movie, index) in arrayMovies" :key="`${index}`"
             :ArrayMovies="movie"
