@@ -1,20 +1,25 @@
 <template>
-  <main class="container border mt-3">
-        <ul class="border ms-1 mt-3" v-for="(movie, index) in ArrayMovies" :key="`${index}`">
-            <li><strong>Titolo:</strong> {{ movie.title }}</li>
-            <li><strong>Titolo Originale:</strong> {{ movie.original_title }}</li>
-            <li><strong>Lingua:</strong> {{ movie.original_language }}</li>
-            <li><strong>Voto:</strong> {{ movie.vote_average }}</li>
-        </ul>
-  </main>
+    <main class="container border mt-3">
+        <cardProp 
+            v-for="(movie, index) in arrayMovies" :key="`${index}`"
+            :ArrayMovies="movie"
+            :title="movie.title"
+            :originalTitle="movie.original_title"
+            :lang="movie.original_language"
+            :vote="movie.vote_average"
+        />
+    </main>
 </template>
 
 <script>
-// import axios from 'axios';
+import cardProp from '../components/cardProp.vue'
 export default {
     name: 'Main',
+    components: {
+        cardProp,
+    },
     props:{
-        ArrayMovies: Array,
+        arrayMovies: Array,
     }
 }
 

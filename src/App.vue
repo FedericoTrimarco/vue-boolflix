@@ -2,7 +2,7 @@
   <div id="app">
     <Header @search="searchMovie"/>
 
-    <Main :ArrayMovies="MainMoviesList"/>
+    <Main :arrayMovies="MainMoviesList"/>
   </div>
 </template>
 
