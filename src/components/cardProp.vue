@@ -4,7 +4,7 @@
         <li><strong>Titolo:</strong> {{ title }}</li>
         <li><strong>Titolo Originale:</strong> {{ originalTitle }}</li>
         <li v-if="flagLang">
-            <img :src="require(`../assets/boolflix-flags/${lang}.png`)" alt="">
+            <img :src="require(`../assets/boolflix-flags/${lang}.png`)" :alt="`${lang}-flag`">
         </li>
         <li v-else><strong>Lingua:</strong> {{ lang }}</li>
         <li><strong>Voto:</strong> {{ vote }}</li>
