@@ -12,7 +12,6 @@
         </div>
         <div v-else class="loading">
             <h1>no results found</h1>
-            <i class="load-icon fas fa-circle-notch my-5"></i>
         </div>
     </main>
 </template>
@@ -37,16 +36,6 @@ export default {
     .loading{
         h1{
             font-size: 50px;
-        }
-        .load-icon{
-            font-size: 50px;
-            animation: rotation 1.2s linear infinite;
-            
-            @keyframes rotation {
-                0%{
-                    transform: rotate(-360deg);
-                }
-            }
         }
     }
 </style>
