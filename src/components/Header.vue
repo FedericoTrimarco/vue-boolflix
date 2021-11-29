@@ -1,7 +1,12 @@
 <template>
     <header class="container">
-            <input v-model.trim="searchFilm" type="text" placeholder="search movie" @keyup.enter="$emit('search', searchFilm)">
-            <button @click="$emit('search', searchFilm)">Invio</button>
+            <input 
+                v-model.trim="searchFilm" 
+                type="text" 
+                placeholder="search movie" 
+                @keyup.enter="$emit('search', searchFilm), clearInput()"
+            >
+            <button @click="$emit('search', searchFilm), clearInput()">Invio</button>
     </header>
 </template>
 
@@ -11,6 +16,11 @@ export default {
     data(){
         return{
             searchFilm: '',
+        }
+    },
+    methods: {
+        clearInput(){
+            this.searchFilm = '';
         }
     }
 }
