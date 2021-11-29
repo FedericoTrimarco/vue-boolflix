@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header />
+    <Header @search="searchMovie"/>
 
     <Main :ArrayMovies="MainMoviesList"/>
   </div>
@@ -19,6 +19,7 @@ export default {
   data(){
     return{
       MainMoviesList : null,
+      searchFilm: '',
     }
   },
   created() {
@@ -27,17 +28,27 @@ export default {
 
   methods: {
     genMovie(){
-      axios.get('https://api.themoviedb.org/3/search/movie', {
-        params:{
-          api_key: 'd6dd0dbacc670d77c1aae585ef4c4f9a',
-          query: 'fantozzi',
-        }
-      })
-        .then(el => {
-          console.log(el.data.results);
-          this.MainMoviesList = el.data.results;
+      if(this.searchFilm != ''){
+        axios.get('https://api.themoviedb.org/3/search/movie', {
+          params:{
+            api_key: 'd6dd0dbacc670d77c1aae585ef4c4f9a',
+            query: this.searchFilm,
+          }
         })
-        .catch(error => console.log(error))
+          .then(el => {
+            this.MainMoviesList = el.data.results;
+          })
+          .catch(error => console.log(error))
+        }
+        else{
+          this.MainMoviesList = [];
+        }
+
+      },
+      
+    searchMovie(text) {
+      this.searchFilm = text;
+      this.genMovie()
     },
   }
 }
