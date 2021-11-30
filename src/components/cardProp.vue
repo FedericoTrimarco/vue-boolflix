@@ -13,7 +13,7 @@
             <li><strong>Titolo: </strong>{{ title }}</li>
             <li><strong>Titolo Originale: </strong>{{ originalTitle }}</li>
             <li>
-                <strong>Lingua:</strong>
+                <strong>Lingua: </strong>
                 <img
                     v-if="flagLang"
                     :src="require(`../assets/boolflix-flags/${lang}.png`)" 
@@ -56,7 +56,7 @@ ul{
     li{
         margin-top: 6px;
         img{
-            width: 50px;
+            width: 40px;
             height: 20px;
         }
     }
