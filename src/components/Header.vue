@@ -3,7 +3,7 @@
             <input 
                 v-model.trim="searchFilmSeries" 
                 type="text" 
-                placeholder="search movie" 
+                placeholder="search movie / series" 
                 @keyup.enter="$emit('search', searchFilmSeries), clearInput()"
             >
             <button @click="$emit('search', searchFilmSeries), clearInput()">Invio</button>
