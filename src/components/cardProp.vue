@@ -3,10 +3,15 @@
     <ul class="ms-1 mt-3">
         <li><strong>Titolo:</strong> {{ title }}</li>
         <li><strong>Titolo Originale:</strong> {{ originalTitle }}</li>
-        <li v-if="flagLang">
-            <img :src="require(`../assets/boolflix-flags/${lang}.png`)" :alt="`${lang}-flag`">
+        <li>
+            <strong>Lingua:</strong>
+            <img
+                v-if="flagLang"
+                :src="require(`../assets/boolflix-flags/${lang}.png`)" 
+                :alt="`${lang}-flag`"
+            >
+            <span v-else>{{ lang }}</span>
         </li>
-        <li v-else><strong>Lingua:</strong> {{ lang }}</li>
         <li><strong>Voto:</strong> {{ vote }}</li>
     </ul>
 
@@ -40,8 +45,8 @@ ul{
     li{
         margin-top: 6px;
         img{
-            width: 60px;
-            height: 30px;
+            width: 50px;
+            height: 20px;
         }
     }
 }

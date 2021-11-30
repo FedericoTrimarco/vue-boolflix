@@ -2,7 +2,7 @@
     <main class="container mt-3">
         <div v-if="arrayMovies.length > 0">
             <cardProp
-                v-for="(movie, index) in arrayMovies" :key="`${index}`"
+                v-for="movie in arrayMovies" :key="movie.id"
                 :ArrayMovies="movie"
                 :title="movie.title"
                 :originalTitle="movie.original_title"
