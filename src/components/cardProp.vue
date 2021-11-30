@@ -1,28 +1,32 @@
 <template>
     <div class="card mb-3">
-        <img 
-            v-if="image !== null"
-            :src="`https://image.tmdb.org/t/p/w185${image}`" :alt="`poster-${title}`"
-        >
-        <img 
-            v-else 
-            src="../assets/error-404-no-wallpaper-found.png" :alt="`poster-${title}`" 
-            class="poster-error"
-        >
-        <ul class="ms-1">
-            <li><strong>Titolo: </strong>{{ title }}</li>
-            <li><strong>Titolo Originale: </strong>{{ originalTitle }}</li>
-            <li>
-                <strong>Lingua: </strong>
-                <img
-                    v-if="flagLang"
-                    :src="require(`../assets/boolflix-flags/${lang}.png`)" 
-                    :alt="`${lang}-flag`"
-                >
-                <span v-else>{{ lang }}</span>
-            </li>
-            <li><strong>Voto:</strong> {{ vote }}</li>
-        </ul>
+        <div class="film-serie-poster">
+            <img 
+                v-if="image !== null"
+                :src="`https://image.tmdb.org/t/p/w185${image}`" :alt="`poster-${title}`"
+            >
+            <img 
+                v-else 
+                src="../assets/error-404-no-wallpaper-found.png" :alt="`poster-${title}`" 
+                class="poster-error"
+            >
+        </div>
+        <div class="film-serie-info">
+            <ul class="ms-1">
+                <li><strong>Titolo: </strong>{{ title }}</li>
+                <li><strong>Titolo Originale: </strong>{{ originalTitle }}</li>
+                <li>
+                    <strong>Lingua: </strong>
+                    <img
+                        v-if="flagLang"
+                        :src="require(`../assets/boolflix-flags/${lang}.png`)" 
+                        :alt="`${lang}-flag`"
+                    >
+                    <span v-else>{{ lang }}</span>
+                </li>
+                <li><strong>Voto:</strong> {{ vote }}</li>
+            </ul>
+        </div>
     </div>
 
 </template>
