@@ -10,8 +10,8 @@
             class="poster-error"
         >
         <ul class="ms-1">
-            <li><strong>Titolo:</strong> {{ title }}</li>
-            <li><strong>Titolo Originale:</strong> {{ originalTitle }}</li>
+            <li><strong>Titolo: </strong>{{ title }}</li>
+            <li><strong>Titolo Originale: </strong>{{ originalTitle }}</li>
             <li>
                 <strong>Lingua:</strong>
                 <img
