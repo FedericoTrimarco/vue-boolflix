@@ -1,12 +1,12 @@
 <template>
     <header class="container">
             <input 
-                v-model.trim="searchFilm" 
+                v-model.trim="searchFilmSeries" 
                 type="text" 
                 placeholder="search movie" 
-                @keyup.enter="$emit('search', searchFilm), clearInput()"
+                @keyup.enter="$emit('search', searchFilmSeries), clearInput()"
             >
-            <button @click="$emit('search', searchFilm), clearInput()">Invio</button>
+            <button @click="$emit('search', searchFilmSeries), clearInput()">Invio</button>
     </header>
 </template>
 
@@ -15,12 +15,12 @@ export default {
     name: 'Header',
     data(){
         return{
-            searchFilm: '',
+            searchFilmSeries: '',
         }
     },
     methods: {
         clearInput(){
-            this.searchFilm = '';
+            this.searchFilmSeries = '';
         }
     }
 }

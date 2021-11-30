@@ -1,18 +1,19 @@
 <template>
     <main class="container mt-3">
-        <div v-if="arrayMovies.length > 0">
-            <cardProp
-                v-for="movie in arrayMovies" :key="movie.id"
-                :ArrayMovies="movie"
-                :title="movie.title"
-                :originalTitle="movie.original_title"
-                :lang="movie.original_language"
-                :vote="movie.vote_average"
-            />
-        </div>
-        <div v-else class="loading">
-            <h1>no results found</h1>
-        </div>
+        <cardProp
+            v-for="movie in arrayMovies" :key="movie.id"
+            :title="movie.title"
+            :originalTitle="movie.original_title"
+            :lang="movie.original_language"
+            :vote="movie.vote_average"
+        />
+        <cardProp
+            v-for="serie in arraySeries" :key="serie.id"
+            :name="serie.name"
+            :originalName="serie.original_name"
+            :lang="serie.original_language"
+            :vote="serie.vote_average"
+        />
     </main>
 </template>
 
@@ -25,6 +26,7 @@ export default {
     },
     props:{
         arrayMovies: Array,
+        arraySeries: Array,
     }
 }
 

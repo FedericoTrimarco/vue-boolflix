@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Header @search="searchMovie"/>
+    <Header @search="searchMovieSeries"/>
 
-    <Main :arrayMovies="MainMoviesList"/>
+    <Main :arrayMovies="MainMoviesList" :arraySeries="MainSeriesList"/>
   </div>
 </template>
 
@@ -19,36 +19,46 @@ export default {
   data(){
     return{
       MainMoviesList : [],
-      searchFilm: '',
+      MainSeriesList: [],
+      searchFilmSeries: '',
     }
   },
   created() {
-    this.genMovie();
+    this.genMovieSeries();
   },
 
   methods: {
-    genMovie(){
-      if(this.searchFilm != ''){
+    genMovieSeries(){
+      if(this.searchFilmSeries != ''){
         axios.get('https://api.themoviedb.org/3/search/movie', {
           params:{
             api_key: 'd6dd0dbacc670d77c1aae585ef4c4f9a',
-            query: this.searchFilm,
+            query: this.searchFilmSeries,
           }
         })
-          .then(el => {
-            this.MainMoviesList = el.data.results;
-          })
-          .catch(error => console.log(error))
-        }
-        else{
-          this.MainMoviesList = [];
-        }
+        .then(el => {
+          this.MainMoviesList = el.data.results;
+        })
+        .catch(error => console.log(error))
 
-      },
+        axios.get('https://api.themoviedb.org/3/search/tv', {
+          params:{
+            api_key: 'd6dd0dbacc670d77c1aae585ef4c4f9a',
+            query: this.searchFilmSeries,
+          }
+        })
+        .then(el => {
+          this.MainSeriesList = el.data.results;
+        })
+        .catch(error => console.log(error))
+        
+      }
+
+    },
       
-    searchMovie(text) {
-      this.searchFilm = text;
-      this.genMovie()
+    searchMovieSeries(text) {
+      this.searchFilmSeries = text;
+      this.genMovieSeries()
     },
   }
 }

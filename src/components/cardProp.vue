@@ -1,8 +1,8 @@
 <template>
 
-    <ul class="ms-1 mt-3">
-        <li><strong>Titolo:</strong> {{ title }}</li>
-        <li><strong>Titolo Originale:</strong> {{ originalTitle }}</li>
+    <ul v-if="title != '' || name != ''" class="ms-1 mt-3">
+        <li><strong>Titolo:</strong> {{ title }}{{ name }}</li>
+        <li><strong>Titolo Originale:</strong> {{ originalTitle }}{{ originalName }}</li>
         <li>
             <strong>Lingua:</strong>
             <img
@@ -22,7 +22,9 @@ export default {
     name: 'cardProp',
     props:{
         title: String,
+        name: String,
         originalTitle: String,
+        originalName: String,
         lang: String,
         vote: Number,
     },
