@@ -63,5 +63,6 @@ ul{
 }
 .poster-error{
     width: 185px;
+    height: 275px;
 }
 </style>
