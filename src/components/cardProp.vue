@@ -6,7 +6,8 @@
         >
         <img 
             v-else 
-            src="../assets/error-404-no-wallpaper-found.png" :alt="`poster-${title}`" class="poster-error"
+            src="../assets/error-404-no-wallpaper-found.png" :alt="`poster-${title}`" 
+            class="poster-error"
         >
         <ul class="ms-1">
             <li><strong>Titolo:</strong> {{ title }}</li>
