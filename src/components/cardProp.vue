@@ -1,11 +1,11 @@
 <template>
-    <div class="card mb-4 border pointer">
+    <div class="card mb-2 border pointer">
         <!-- POSTER -->
         <div class="film-serie-poster">
             <img 
                 v-if="image !== null"
                 class="poster"
-                :src="`https://image.tmdb.org/t/p/w500${image}`" :alt="`poster-${title}`"
+                :src="`https://image.tmdb.org/t/p/w342${image}`" :alt="`poster-${title}`"
             >
             <img 
                 v-else 
@@ -73,7 +73,7 @@ export default {
 @import '@/style/utilities';
 @import '@/style/variables';
 .card{
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 0 3px;
     position: relative;
     overflow: hidden;
