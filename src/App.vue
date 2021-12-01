@@ -2,7 +2,7 @@
   <div id="app">
     <Header @search="searchMovieSeries"/>
     
-    <main>
+    <main class="pt-5 ">
       <MainList :arrayList="MainMoviesList"/>
       <MainList :arrayList="MainSeriesList"/>
     </main>

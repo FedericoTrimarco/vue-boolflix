@@ -1,5 +1,5 @@
 <template>
-    <section class="container mt-3 border d-flex flex-wrap">
+    <section class="border d-flex flex-wrap">
         <cardProp
             class="ms-1"
             v-for="el in arrayList" :key="el.id"

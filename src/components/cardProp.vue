@@ -3,20 +3,23 @@
         <!-- POSTER -->
         <div class="film-serie-poster">
             <img 
-                class="poster"
                 v-if="image !== null"
+                class="poster"
                 :src="`https://image.tmdb.org/t/p/w342${image}`" :alt="`poster-${title}`"
             >
             <img 
-                class="poster-error"
                 v-else 
+                class="poster-error"
                 src="../assets/poster-not-found.jpg" :alt="`poster-${title}`"
             >
         </div>
         <!-- INFO -->
-        <div class="film-serie-info border d-none">
+        <div class="film-serie-info border d-none" tabindex="0">
             <ul class="ms-1">
-                <li><strong>Titolo: </strong>{{ title }}</li>
+                <li class="text-center mb-4">
+                    <i class="arrow fas fa-chevron-up"></i>
+                    <h1>{{ title }}</h1>
+                </li>
                 <li><strong>Titolo Originale: </strong>{{ originalTitle }}</li>
                 <li>
                     <strong>Lingua: </strong>
@@ -27,7 +30,7 @@
                     >
                     <span v-else>{{ lang }}</span>
                 </li>
-                <li class="d-flex">
+                <li class="d-flex align-items-center">
                     <strong>Vote: </strong>
                     <span v-if="vote == 0">N.C.</span>
                     <div v-else class="vote-stars ms-1">
@@ -69,8 +72,8 @@ export default {
 <style scoped lang="scss">
 @import '@/style/utilities';
 .card{
-    width: 342px;
     position: relative;
+    overflow: hidden;
     &:hover{
         .film-serie-info{
             display: block;
@@ -78,11 +81,19 @@ export default {
     }
     .film-serie-info{
         position: absolute;
-        top: 0;
         left: 0;
-        height: 100%;
-        background-color: rgba(0,0,0,0.5);
+        bottom: 0;
+        width: 100%;
+        height: 100px;
+        background-color: rgba(0,0,0,0.8);
         color: white;
+        transition: height .5s;
+        &:focus{
+            height: 100%;
+            .arrow{
+                transform: rotate(180deg);
+            }
+        }
         strong{
             color: #ac1616;
         }
@@ -102,7 +113,7 @@ ul{
     }
 }
 .poster{
-    height: 100%;
+    height: 513px;
 }
 .poster-error{
     width: 342px;
