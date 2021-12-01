@@ -1,20 +1,23 @@
 <template>
   <div id="app">
     <Header @search="searchMovieSeries"/>
-
-    <Main :arrayMovies="MainMoviesList" :arraySeries="MainSeriesList"/>
+    
+    <main>
+      <MainList :arrayList="MainMoviesList"/>
+      <MainList :arrayList="MainSeriesList"/>
+    </main>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
 import Header from '@/components/Header.vue'
-import Main from '@/components/Main.vue'
+import MainList from '@/components/MainList.vue'
 export default {
   name: 'App',
   components: {
     Header,
-    Main,
+    MainList,
   },
   data(){
     return{

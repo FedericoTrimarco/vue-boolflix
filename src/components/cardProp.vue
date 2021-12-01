@@ -7,7 +7,7 @@
             >
             <img 
                 v-else 
-                src="../assets/error-404-no-wallpaper-found.png" :alt="`poster-${title}`" 
+                src="../assets/error-404-no-wallpaper-found.png" :alt="`poster-${title}`"
                 class="poster-error"
             >
         </div>
