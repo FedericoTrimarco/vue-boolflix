@@ -79,6 +79,15 @@ export default {
             display: block;
         }
     }
+    .film-serie-poster{
+        .poster{
+            height: 513px;
+        }
+        .poster-error{
+            width: 342px;
+            height: 513px;
+        }
+    }
     .film-serie-info{
         position: absolute;
         left: 0;
@@ -97,26 +106,19 @@ export default {
         strong{
             color: #ac1616;
         }
+        ul{
+            li{
+                list-style: none;
+                margin-top: 6px;
+                img{
+                    width: 40px;
+                    height: 20px;
+                }
+            }
+        }
         .star{
             color: #d4d424;
         }
     }
-}
-ul{
-    li{
-        list-style: none;
-        margin-top: 6px;
-        img{
-            width: 40px;
-            height: 20px;
-        }
-    }
-}
-.poster{
-    height: 513px;
-}
-.poster-error{
-    width: 342px;
-    height: 513px;
 }
 </style>
