@@ -94,7 +94,7 @@ export default {
             object-fit: cover;
         }
         .poster-error{
-            width: 500px;
+            width: 342px;
             height: 100%;
         }
         &:hover{
