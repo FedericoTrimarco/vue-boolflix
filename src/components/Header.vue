@@ -37,7 +37,10 @@ export default {
 
 header{
     background: rgb(180,180,180);
-background: linear-gradient(0deg, rgba(180,180,180,0.3113620448179272) 0%, rgba(116,116,116,0) 38%, rgba(161,1,1,0.8407738095238095) 98%);
+    background: linear-gradient(0deg, rgba(180,180,180,0.3113620448179272) 0%,
+                              rgba(116,116,116,0) 38%,
+                              rgba(161,1,1,0.8407738095238095) 98%
+                            );
     
     position: fixed;
     z-index: 1;
