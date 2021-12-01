@@ -1,5 +1,5 @@
 <template>
-    <header class="border">
+    <header class="border text-white">
         <div class="container d-flex justify-content-between align-items-center">
             <img src="../assets/Boolflix-logo.png" alt="logo">
             <div class="search">
@@ -9,7 +9,7 @@
                     placeholder="search movie / series" 
                     @keyup.enter="$emit('search', searchFilmSeries), clearInput()"
                 >
-                <i class="fs-1 fas fa-search" @click="$emit('search', searchFilmSeries), clearInput()"></i>
+                <i class="pointer fs-1 fas fa-search" @click="$emit('search', searchFilmSeries), clearInput()"></i>
             </div>
         </div>
     </header>
@@ -33,10 +33,11 @@ export default {
 
 <style scoped lang="scss">
 @import '@/style/utilities';
+@import '@/style/variables';
 
 header{
     background: rgb(0,0,0);
-    background: linear-gradient(0deg, rgba(0,0,0,0.927608543417367) 0%, rgba(111,0,0,0.8743872549019608) 55%, rgba(255,0,0,0.76234243697479) 100%);
+    background: linear-gradient(0deg, rgba(0,0,0,0.927608543417367) 25%, rgba(17,7,7,0.8743872549019608) 64%, rgba(102,12,12,0.8407738095238095) 100%);
     
     position: fixed;
     z-index: 1;
@@ -46,6 +47,14 @@ header{
         height: 35px;
         padding-right: 150px;
         margin-right: 10px;
+        border: none;
+        color: white;
+        background-color: rgba(0,0,0,0.0001);
+        outline: none;
+        border-bottom: 1px solid white;
+        &:focus{
+            border-bottom: 1px solid $primary-color;
+        }
     }
 }
 </style>
