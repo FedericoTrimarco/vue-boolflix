@@ -1,12 +1,14 @@
 <template>
-    <section class="container mt-3 border">
+    <section class="container mt-3 border d-flex flex-wrap">
         <cardProp
+            class="ms-1"
             v-for="el in arrayList" :key="el.id"
             :image="el.poster_path || el.poster_path"
             :title="el.title || el.name"
             :originalTitle="el.original_title || el.original_name"
             :lang="el.original_language || el.original_language"
             :vote="el.vote_average || el.vote_average"
+            :plot="el.overview"
         />
     </section>
 </template>

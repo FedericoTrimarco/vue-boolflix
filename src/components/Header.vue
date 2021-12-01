@@ -1,5 +1,5 @@
 <template>
-    <header class="container border">
+    <header class="border">
             <input 
                 v-model.trim="searchFilmSeries" 
                 type="text" 
