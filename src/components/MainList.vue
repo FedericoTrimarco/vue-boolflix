@@ -1,7 +1,6 @@
 <template>
     <section class="border d-flex flex-wrap">
         <cardProp
-            class="ms-1"
             v-for="el in arrayList" :key="el.id"
             :image="el.poster_path || el.poster_path"
             :title="el.title || el.name"

@@ -1,11 +1,11 @@
 <template>
-    <div class="card mb-3 border pointer">
+    <div class="card mb-4 border pointer">
         <!-- POSTER -->
         <div class="film-serie-poster">
             <img 
                 v-if="image !== null"
                 class="poster"
-                :src="`https://image.tmdb.org/t/p/w342${image}`" :alt="`poster-${title}`"
+                :src="`https://image.tmdb.org/t/p/w500${image}`" :alt="`poster-${title}`"
             >
             <img 
                 v-else 
@@ -71,7 +71,10 @@ export default {
 
 <style scoped lang="scss">
 @import '@/style/utilities';
+@import '@/style/variables';
 .card{
+    border-radius: 10px;
+    padding: 0 3px;
     position: relative;
     overflow: hidden;
     &:hover{
@@ -80,12 +83,24 @@ export default {
         }
     }
     .film-serie-poster{
+        height: 100%;
+        width: 100%;
+        img{
+            transition: filter .8s;
+        }
         .poster{
-            height: 513px;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
         }
         .poster-error{
-            width: 342px;
-            height: 513px;
+            width: 500px;
+            height: 100%;
+        }
+        &:hover{
+            img{
+                filter: blur(.5rem);;
+            }
         }
     }
     .film-serie-info{
@@ -94,7 +109,7 @@ export default {
         bottom: 0;
         width: 100%;
         height: 100px;
-        background-color: rgba(0,0,0,0.8);
+        background-color: rgba(0,0,0,0.7);
         color: white;
         transition: height .5s;
         &:focus{
@@ -104,7 +119,7 @@ export default {
             }
         }
         strong{
-            color: #ac1616;
+            color: $primary-color;
         }
         ul{
             li{
