@@ -1,7 +1,7 @@
 // CONTAINER
-.border{
+/* .border{
     border: 1px solid red
-}
+} */
 .container{
     width: 95%;
     margin: 0 auto;
@@ -30,7 +30,7 @@
 }
 // PADDING
 .pt-5{
-    padding-top: 150px;
+    padding-top: 100px;
 }
 .px-3{
     padding: 0 5px;
@@ -88,6 +88,9 @@
 }
 .h-100px{
     height: 100px;
+}
+.h-100vh{
+    height: 100vh;
 }
 .h-100{
     height: 100%;
