@@ -14,10 +14,10 @@
             >
         </div>
         <!-- INFO -->
-        <div class="film-serie-info border d-none" tabindex="0">
+        <div :class="{active : active == true}" class="film-serie-info border d-none h-100px">
             <ul class="ms-1">
                 <li class="text-center mb-4">
-                    <i class="arrow pointer fas fa-chevron-up"></i>
+                    <i class="arrow mb-1 fs-1 pointer fas fa-chevron-up" @click="showInfo"></i>
                     <h1>{{ title }}</h1>
                 </li>
                 <li><strong>Titolo Originale: </strong>{{ originalTitle }}</li>
@@ -62,12 +62,18 @@ export default {
     },
     data(){
         return{
-            arrLanguages: ['it', 'en']
+            arrLanguages: ['it', 'en'],
+            active: false,
         }
     },
     computed:{
         flagLang(){
             return this.arrLanguages.includes(this.lang);
+        }
+    },
+    methods:{
+        showInfo(){
+            this.active = !this.active;
         }
     }
 }
@@ -89,7 +95,7 @@ export default {
     .film-serie-poster{
         height: 100%;
         img{
-            transition: filter .5s;
+            transition: filter 1.5s;
         }
         .poster{
             height: 100%;
@@ -111,16 +117,9 @@ export default {
         left: 0;
         bottom: 0;
         width: 100%;
-        height: 100px;
         background-color: rgba(0,0,0,0.7);
         color: white;
         transition: height .5s;
-        &:focus{
-            height: 100%;
-            .arrow{
-                transform: rotate(180deg);
-            }
-        }
         strong{
             color: $primary-color;
         }
