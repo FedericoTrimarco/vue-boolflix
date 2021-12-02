@@ -10,8 +10,14 @@
 .mx-1{
     margin:0 20px;
 }
+.my-4{
+    margin: 60px 0;
+}
 .ms-1{
     margin-left: 20px;
+}
+.ms-2{
+    margin-left: 40px;
 }
 .me-1{
     margin-right: 20px;
@@ -100,4 +106,8 @@
     .arrow{
         transform: rotate(180deg);
     }
+}
+// LIST & LINK
+.list-none{
+    list-style: none;
 }
