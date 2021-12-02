@@ -1,7 +1,7 @@
 <template>
-    <div class="card mb-2 border pointer">
+    <div class="card mb-2 border">
         <!-- POSTER -->
-        <div class="film-serie-poster">
+        <div class="film-serie-poster pointer">
             <img 
                 v-if="image !== null"
                 class="poster"
@@ -17,7 +17,7 @@
         <div class="film-serie-info border d-none" tabindex="0">
             <ul class="ms-1">
                 <li class="text-center mb-4">
-                    <i class="arrow fas fa-chevron-up"></i>
+                    <i class="arrow pointer fas fa-chevron-up"></i>
                     <h1>{{ title }}</h1>
                 </li>
                 <li><strong>Titolo Originale: </strong>{{ originalTitle }}</li>
@@ -31,14 +31,18 @@
                     <span v-else>{{ lang }}</span>
                 </li>
                 <li class="d-flex align-items-center">
-                    <strong>Vote: </strong>
+                    <strong>Vote:</strong>
                     <span v-if="vote == 0">N.C.</span>
                     <div v-else class="vote-stars ms-1">
                         <i v-for="(n, i) in Math.ceil(vote/2)" :key="`star-${i}`" class="star fas fa-star"></i>
                         <i v-for="(n, i) in 5 - Math.ceil(vote/2)" :key="`starVoid-${i}`" class="star far fa-star"></i>
                     </div>
                 </li>
-                <li><strong>Trama: </strong>{{ plot }}</li>
+                <li>
+                    <strong>Trama: </strong>
+                    <span v-if="plot === ''">non disponibile</span>
+                    <span v-else class="line-height-25">{{ plot }}</span>
+                </li>
             </ul>
         </div>
     </div>
@@ -84,9 +88,8 @@ export default {
     }
     .film-serie-poster{
         height: 100%;
-        width: 100%;
         img{
-            transition: filter .8s;
+            transition: filter .5s;
         }
         .poster{
             height: 100%;

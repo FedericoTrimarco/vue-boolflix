@@ -36,11 +36,8 @@ export default {
 @import '@/style/variables';
 
 header{
-    background: rgb(180,180,180);
-    background: linear-gradient(0deg, rgba(180,180,180,0.3113620448179272) 0%,
-                              rgba(116,116,116,0) 38%,
-                              rgba(161,1,1,0.8407738095238095) 98%
-                            );
+    background: rgb(20,20,20);
+background: linear-gradient(0deg, rgba(20,20,20,0.9220063025210083) 35%, rgba(195,39,39,1) 100%);
     
     position: fixed;
     z-index: 1;
