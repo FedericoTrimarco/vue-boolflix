@@ -13,6 +13,9 @@
 .mt-3{
     margin-top: 40px;
 }
+.mb-1{
+    margin-bottom: 10px;
+}
 .mb-2{
     margin-bottom: 20px
 }
@@ -66,4 +69,14 @@
 }
 .line-height-25{
     line-height: 25px;
+}
+// HEIGTH & WIDTH
+.h-100px{
+    height: 100px;
+}
+.film-serie-info.active{
+    height: 100%;
+    .arrow{
+        transform: rotate(180deg);
+    }
 }
