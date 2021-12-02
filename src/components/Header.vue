@@ -44,6 +44,7 @@ header{
     width: 100%;
     padding-top: 15px;
     input{
+        width: 500px;
         height: 35px;
         padding-right: 150px;
         margin-right: 10px;

@@ -4,8 +4,8 @@
         <div class="film-serie-poster pointer">
             <img 
                 v-if="image !== null"
-                class="poster"
-                :src="`https://image.tmdb.org/t/p/w342${image}`" :alt="`poster-${title}`"
+                class="poster border"
+                :src="`https://image.tmdb.org/t/p/original${image}`" :alt="`poster-${title}`"
             >
             <img 
                 v-else 
@@ -97,9 +97,10 @@ export default {
 @import '@/style/variables';
 .card{
     border-radius: 20px;
-    padding: 0 3px;
     position: relative;
     overflow: hidden;
+    min-width: 400px;
+    max-width: 400px;
     &:hover{
         .film-serie-info{
             display: block;
@@ -116,7 +117,7 @@ export default {
             object-fit: cover;
         }
         .poster-error{
-            width: 342px;
+            width: 100%;
             height: 100%;
         }
         &:hover{

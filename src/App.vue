@@ -2,9 +2,21 @@
   <div id="app">
     <Header @search="searchMovieSeries"/>
     
-    <main class="pt-5">
-      <MainList :arrayList="MainMoviesList"/>
-      <MainList :arrayList="MainSeriesList"/>
+    <main class="pt-5 border">
+      <!-- SERIE TV / FILM -->
+      <div v-if="MainMoviesList.length !== 0 && MainSeriesList.length !== 0">
+        <!-- film -->
+        <h1 class="tv-movie-list text-white" v-show="MainMoviesList.length !== 0">MOVIE</h1>
+        <MainList :arrayList="MainMoviesList"/>
+        <!-- serie -->
+        <h1 class="tv-movie-list text-white" v-show="MainSeriesList.length !== 0">SERIE TV</h1>
+        <MainList :arrayList="MainSeriesList"/>
+      </div>
+
+      <div v-else class="border text-center list-not-found">
+        <img src="./assets/Boolflix-big-logo.png" alt="logo" class="border ">
+        <h1 class="pt-5"> GUARDA LE TUE SERIE TV / FILM PREFERITI DIRETTAMENTE DAL TUO DIVANO</h1>
+      </div>
     </main>
   </div>
 </template>
@@ -70,5 +82,14 @@ export default {
 <style lang="scss">
 @import '@/style/globals';
 @import '@/style/utilities';
+@import '@/style/variables';
+.tv-movie-list{
+  text-align: center;
+  margin: 50px 0;
+  letter-spacing: 5px;
+}
+.list-not-found h1{
+  color: $primary-color;
+}
 
 </style>
