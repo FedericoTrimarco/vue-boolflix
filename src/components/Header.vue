@@ -1,15 +1,26 @@
 <template>
     <header class="border text-white">
         <div class="container d-flex justify-content-between align-items-center">
-            <img src="../assets/Boolflix-logo.png" alt="logo">
+            <div class="d-flex align-items-center">
+                <img src="../assets/Boolflix-logo.png" alt="logo">
+                <ul class="d-flex ms-1 list-none">
+                    <li v-for="(link, id) in linkList" :key="id">
+                        <a href="/" @click.prevent>{{link}}</a>
+                    </li>
+                </ul>
+            </div>
             <div class="search">
                 <input 
-                    v-model.trim="searchFilmSeries" 
-                    type="text" 
-                    placeholder="search movie / series" 
+                    v-model.trim="searchFilmSeries"
+                    type="text"
+                    placeholder="search movie / series"
                     @keyup.enter="$emit('search', searchFilmSeries), clearInput()"
                 >
-                <i class="pointer fs-1 fas fa-search" @click="$emit('search', searchFilmSeries), clearInput()"></i>
+                <i 
+                    class="pointer fs-1 fas fa-search" 
+                    @click="$emit('search', searchFilmSeries), clearInput()"
+                >
+                </i>
             </div>
         </div>
     </header>
@@ -21,6 +32,7 @@ export default {
     data(){
         return{
             searchFilmSeries: '',
+            linkList: ['Home','Serie Tv','Film','Nuovi e popolari','La mia lista'],
         }
     },
     methods: {
@@ -38,12 +50,25 @@ export default {
 header{
     background: rgb(20,20,20);
     background: linear-gradient(0deg, rgba(20,20,20,0) 9%, rgba(20,20,20,0.8911939775910365) 46%, rgba(0,0,0,1) 100%);
-
-    
     position: fixed;
     z-index: 1;
     width: 100%;
     padding-top: 15px;
+    
+    li{
+        margin-left: 40px;
+        a{
+            text-decoration: none;
+            font-weight: bold;
+            color: #ffffffc5;
+            &:hover{
+                color: #ffffff79;
+            }
+            &:focus{
+                color: #fff;
+            }
+        }
+    }
     input{
         width: 500px;
         height: 35px;
