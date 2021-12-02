@@ -14,7 +14,10 @@
             >
         </div>
         <!-- INFO -->
-        <div :class="{active : active == true}" class="film-serie-info border d-none h-100px">
+        <div 
+            :class="{active : active == true}" 
+            class="film-serie-info border d-none h-100px"
+        >
             <ul class="ms-1">
                 <li class="text-center mb-4">
                     <i class="arrow mb-1 fs-1 pointer fas fa-chevron-up" @click="showInfo"></i>
@@ -34,8 +37,18 @@
                     <strong>Vote:</strong>
                     <span v-if="vote == 0">N.C.</span>
                     <div v-else class="vote-stars ms-1">
-                        <i v-for="(n, i) in Math.ceil(vote/2)" :key="`star-${i}`" class="star fas fa-star"></i>
-                        <i v-for="(n, i) in 5 - Math.ceil(vote/2)" :key="`starVoid-${i}`" class="star far fa-star"></i>
+                        <i 
+                            v-for="(n, i) in Math.ceil(vote/2)" 
+                            :key="`star-${i}`" 
+                            class="star fas fa-star"
+                        >
+                        </i>
+                        <i 
+                            v-for="(n, i) in 5 - Math.ceil(vote/2)" 
+                            :key="`starVoid-${i}`" 
+                            class="star far fa-star"
+                        >
+                        </i>
                     </div>
                 </li>
                 <li>
@@ -123,15 +136,14 @@ export default {
         strong{
             color: $primary-color;
         }
-        ul{
-            li{
-                list-style: none;
-                margin-top: 6px;
-                img{
-                    width: 40px;
-                    height: 20px;
-                }
+        li{
+            list-style: none;
+            margin-top: 6px;
+            img{
+                width: 40px;
+                height: 20px;
             }
+            
         }
         .star{
             color: #d4d424;
