@@ -6,16 +6,21 @@
       <!-- SERIE TV / FILM -->
       <div v-if="MainMoviesList.length !== 0 && MainSeriesList.length !== 0">
         <!-- film -->
-        <h1 class="tv-movie-list text-white" v-show="MainMoviesList.length !== 0">MOVIE</h1>
+        <div class="tv-movie-list d-flex justify-content-center align-items-center">
+          <img src="./assets/small-logo.png" alt="small-logo">
+          <h1 class="text-white ms-1" v-show="MainMoviesList.length !== 0">MOVIE</h1>
+        </div>
         <MainList :arrayList="MainMoviesList"/>
         <!-- serie -->
-        <h1 class="tv-movie-list text-white" v-show="MainSeriesList.length !== 0">SERIE TV</h1>
+        <div class="tv-movie-list d-flex justify-content-center align-items-center">
+          <img src="./assets/small-logo.png" alt="small-logo">
+          <h1 class="text-white ms-1" v-show="MainSeriesList.length !== 0">SERIE</h1>
+        </div>
         <MainList :arrayList="MainSeriesList"/>
       </div>
 
-      <div v-else class="border text-center list-not-found">
+      <div v-else class="border text-center list-not-found h-100vh">
         <img src="./assets/Boolflix-big-logo.png" alt="logo" class="border ">
-        <h1 class="pt-5"> GUARDA LE TUE SERIE TV / FILM PREFERITI DIRETTAMENTE DAL TUO DIVANO</h1>
       </div>
     </main>
   </div>
@@ -88,8 +93,13 @@ export default {
   margin: 50px 0;
   letter-spacing: 5px;
 }
-.list-not-found h1{
-  color: $primary-color;
+.list-not-found{
+  background-image: url('./assets/cinema-bg.jpg');
+  background-size: cover;
+  h1{
+    color: $primary-color;
+  }
 }
+
 
 </style>

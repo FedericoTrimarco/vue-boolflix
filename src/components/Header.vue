@@ -37,7 +37,8 @@ export default {
 
 header{
     background: rgb(20,20,20);
-    background: linear-gradient(0deg, rgba(20,20,20,0.8911939775910365) 46%, rgba(195,39,39,1) 100%);
+    background: linear-gradient(0deg, rgba(20,20,20,0) 9%, rgba(20,20,20,0.8911939775910365) 46%, rgba(0,0,0,1) 100%);
+
     
     position: fixed;
     z-index: 1;
