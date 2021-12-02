@@ -1,5 +1,5 @@
 <template>
-    <div class="card mb-2 border">
+    <div class="card mb-2 border" @mouseleave="removeInfo">
         <!-- POSTER -->
         <div class="film-serie-poster pointer">
             <img 
@@ -87,8 +87,12 @@ export default {
     methods:{
         showInfo(){
             this.active = !this.active;
+        },
+        removeInfo(){
+            this.active = false;
         }
     }
+
 }
 </script>
 
