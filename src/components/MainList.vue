@@ -30,10 +30,10 @@ export default {
     },
     methods: {
         scrollLeft(){
-            this.$refs.list.scrollLeft += 2000;
+            this.$refs.list.scrollLeft += 1200;
         },
         scrollRight(){
-            this.$refs.list.scrollLeft -= 2000;
+            this.$refs.list.scrollLeft -= 1200;
         }
     }
 

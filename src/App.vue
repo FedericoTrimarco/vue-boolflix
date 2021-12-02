@@ -96,9 +96,6 @@ export default {
 .list-not-found{
   background-image: url('./assets/cinema-bg.jpg');
   background-size: cover;
-  h1{
-    color: $primary-color;
-  }
 }
 
 

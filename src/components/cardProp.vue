@@ -103,8 +103,8 @@ export default {
     border-radius: 20px;
     position: relative;
     overflow: hidden;
-    min-width: 400px;
-    max-width: 400px;
+    min-width: 342px;
+    max-width: 342px;
     &:hover{
         .film-serie-info{
             display: block;
