@@ -1,7 +1,12 @@
 <template>
 <section class="d-flex">
+    <i 
+        class="align-self-center me-1 fas fa-chevron-circle-left pointer" 
+        v-show="arrayList.length > 5" 
+        @click="scrollRight"
+    >
+    </i>
 
-    <i class="align-self-center me-1 fas fa-chevron-circle-left pointer" v-show="arrayList.length > 5" @click="scrollRight"></i>
     <div class="cards-list border d-flex" ref="list">
         <cardProp
             class="mx-1"
@@ -14,7 +19,13 @@
             :plot="el.overview"
         />
     </div>
-    <i class="fas fa-chevron-circle-right align-self-center pointer ms-1" v-show="arrayList.length > 5" @click="scrollLeft"></i>
+
+    <i 
+        class="fas fa-chevron-circle-right align-self-center pointer ms-1" 
+        v-show="arrayList.length > 5" 
+        @click="scrollLeft"
+    >
+    </i>
 </section>
 </template>
 

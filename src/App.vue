@@ -6,16 +6,10 @@
       <!-- SERIE TV / FILM -->
       <div v-if="MainMoviesList.length !== 0 && MainSeriesList.length !== 0">
         <!-- film -->
-        <div class="tv-movie-list d-flex justify-content-center align-items-center">
-          <img src="./assets/small-logo.png" alt="small-logo">
-          <h1 class="text-white ms-1" v-show="MainMoviesList.length !== 0">MOVIE</h1>
-        </div>
+        <TypologyTitle :mainArray="MainMoviesList" text="MOVIE"/>
         <MainList :arrayList="MainMoviesList"/>
         <!-- serie -->
-        <div class="tv-movie-list d-flex justify-content-center align-items-center">
-          <img src="./assets/small-logo.png" alt="small-logo">
-          <h1 class="text-white ms-1" v-show="MainSeriesList.length !== 0">SERIE</h1>
-        </div>
+        <TypologyTitle :mainArray="MainSeriesList" text="SERIE"/>
         <MainList :arrayList="MainSeriesList"/>
       </div>
 
@@ -30,11 +24,13 @@
 import axios from 'axios';
 import Header from '@/components/Header.vue'
 import MainList from '@/components/MainList.vue'
+import TypologyTitle from '@/components/TypologyTitle.vue'
 export default {
   name: 'App',
   components: {
     Header,
     MainList,
+    TypologyTitle,
   },
   data(){
     return{
@@ -88,11 +84,7 @@ export default {
 @import '@/style/globals';
 @import '@/style/utilities';
 @import '@/style/variables';
-.tv-movie-list{
-  text-align: center;
-  margin: 50px 0;
-  letter-spacing: 5px;
-}
+
 .list-not-found{
   background-image: url('./assets/cinema-bg.jpg');
   background-size: cover;
