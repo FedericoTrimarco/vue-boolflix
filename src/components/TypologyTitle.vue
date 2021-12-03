@@ -18,8 +18,12 @@ export default {
 <style scoped lang="scss">
 @import '@/style/utilities';
 .tv-movie-list{
-  text-align: center;
-  margin: 50px 0;
-  letter-spacing: 5px;
+    text-align: center;
+    margin: 50px 0;
+    letter-spacing: 5px;
+
+    h1{
+        text-shadow: 2px 2px 4px black;
+    }
 }
 </style>
