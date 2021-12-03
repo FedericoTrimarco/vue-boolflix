@@ -6,6 +6,8 @@
                 v-if="image !== null"
                 class="poster border"
                 :src="`https://image.tmdb.org/t/p/original${image}`" :alt="`poster-${title}`"
+                @mouseover="changeBgImage(backgroundImage)"
+                
             >
             <img 
                 v-else 
@@ -19,11 +21,14 @@
             class="film-serie-info border d-none h-100px"
         >
             <ul class="ms-1">
+                        <!-- title & arro-top -->
                 <li class="text-center mb-4">
                     <i class="arrow mb-1 fs-1 pointer fas fa-chevron-up" @click="showInfo"></i>
                     <h1>{{ title }}</h1>
                 </li>
+                        <!-- original-title -->
                 <li><strong>Titolo Originale: </strong>{{ originalTitle }}</li>
+                        <!-- language -->
                 <li>
                     <strong>Lingua: </strong>
                     <img
@@ -33,6 +38,7 @@
                     >
                     <span v-else>{{ lang }}</span>
                 </li>
+                        <!-- vote -->
                 <li class="d-flex align-items-center">
                     <strong>Vote:</strong>
                     <span v-if="vote == 0">N.C.</span>
@@ -51,6 +57,7 @@
                         </i>
                     </div>
                 </li>
+                       <!-- plot -->
                 <li>
                     <strong>Trama: </strong>
                     <span v-if="plot === ''">non disponibile</span>
@@ -67,6 +74,7 @@ export default {
     name: 'cardProp',
     props:{
         image: String,
+        backgroundImage: String,
         title: String,
         originalTitle: String,
         lang: String,
@@ -77,6 +85,7 @@ export default {
         return{
             arrLanguages: ['it', 'en'],
             active: false,
+            app: document.querySelector('#app'),
         }
     },
     computed:{
@@ -90,7 +99,12 @@ export default {
         },
         removeInfo(){
             this.active = false;
-        }
+        },
+        changeBgImage(image){
+            this.app.style.backgroundImage = `url("https://image.tmdb.org/t/p/original${image}")`;
+        },
+        
+        
     }
 
 }
