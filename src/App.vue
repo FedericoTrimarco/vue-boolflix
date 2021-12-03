@@ -1,8 +1,8 @@
 <template>
-  <div id="app">
+  <div id="app" class="d-flex flex-column">
     <Header @search="searchMovieSeries"/>
     
-    <main class="pt-5 border">
+    <main class="pt-5 border flex-grow-1">
       <!-- SERIE TV / FILM -->
       <div v-if="MainMoviesList.length !== 0 || MainSeriesList.length !== 0">
         <!-- film -->
@@ -17,6 +17,7 @@
         <img src="./assets/Boolflix-big-logo.png" alt="logo" class="border ">
       </div>
     </main>
+    <Footer />
   </div>
 </template>
 
@@ -25,12 +26,14 @@ import axios from 'axios';
 import Header from '@/components/Header.vue'
 import MainList from '@/components/MainList.vue'
 import TypologyTitle from '@/components/TypologyTitle.vue'
+import Footer from '@/components/Footer.vue'
 export default {
   name: 'App',
   components: {
     Header,
     MainList,
     TypologyTitle,
+    Footer,
   },
   data(){
     return{
@@ -85,6 +88,7 @@ export default {
 @import '@/style/utilities';
 @import '@/style/variables';
 #app{
+  flex-grow: 1;
   background-image: url('./assets/bg-gray.png');
   background-size: cover;
   background-attachment: fixed;
