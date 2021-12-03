@@ -12,7 +12,7 @@
         <TypologyTitle :mainArray="MainSeriesList" text="SERIE"/>
         <MainList :arrayList="MainSeriesList"/>
       </div>
-
+        <!-- HOME -->
       <div v-else class="border text-center list-not-found h-100vh">
         <img src="./assets/Boolflix-big-logo.png" alt="logo" class="border ">
       </div>
@@ -84,7 +84,13 @@ export default {
 @import '@/style/globals';
 @import '@/style/utilities';
 @import '@/style/variables';
-
+#app{
+  background-image: url('./assets/bg-gray.png');
+  background-size: cover;
+  background-attachment: fixed;
+  transition: background-image .5s linear 1s,
+              background-color 1s;
+}
 .list-not-found{
   background-image: url('./assets/cinema-bg.jpg');
   background-size: cover;
