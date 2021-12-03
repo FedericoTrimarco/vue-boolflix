@@ -89,7 +89,6 @@ export default {
   background-size: cover;
   background-attachment: fixed;
   transition: background-image .5s linear 1s,
-              background-color 1s;
 }
 .list-not-found{
   background-image: url('./assets/cinema-bg.jpg');
