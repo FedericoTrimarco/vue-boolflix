@@ -4,12 +4,12 @@
     
     <main class="pt-5 border">
       <!-- SERIE TV / FILM -->
-      <div v-if="MainMoviesList.length !== 0 && MainSeriesList.length !== 0">
+      <div v-if="MainMoviesList.length !== 0 || MainSeriesList.length !== 0">
         <!-- film -->
-        <TypologyTitle :mainArray="MainMoviesList" text="MOVIE"/>
+        <TypologyTitle v-show="MainMoviesList.length !== 0" :mainArray="MainMoviesList" text="MOVIE"/>
         <MainList :arrayList="MainMoviesList"/>
         <!-- serie -->
-        <TypologyTitle :mainArray="MainSeriesList" text="SERIE"/>
+        <TypologyTitle v-show="MainSeriesList.length !== 0" :mainArray="MainSeriesList" text="SERIE"/>
         <MainList :arrayList="MainSeriesList"/>
       </div>
         <!-- HOME -->
