@@ -101,7 +101,12 @@ export default {
             this.active = false;
         },
         changeBgImage(image){
-            this.app.style.backgroundImage = `url("https://image.tmdb.org/t/p/original${image}")`;
+            if(this.backgroundImage == null){
+                this.app.style.backgroundImage = "url('https://www.icolorpalette.com/download/solidcolorimage/141414_solid_color_background_icolorpalette.png')";
+            }else{
+                this.app.style.backgroundImage = `url("https://image.tmdb.org/t/p/original${image}")`;
+
+            }
         },
         
         

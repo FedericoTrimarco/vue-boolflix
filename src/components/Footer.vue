@@ -54,7 +54,7 @@ export default {
 footer{
     background-color: #141414f1;
     border-top: 1px solid #ffffff23;
-    margin-top: 50px;
+    // margin-top: 50px;
     padding: 50px;
     div{
         margin: 0 auto;
