@@ -1,14 +1,17 @@
 <template>
     <header class="border text-white">
         <div class="container d-flex justify-content-between align-items-center">
+                       <!-- logo -->
             <div class="d-flex align-items-center">
                 <img src="../assets/Boolflix-logo.png" alt="logo">
+                       <!-- link-list -->
                 <ul class="d-flex ms-1 list-none">
                     <li v-for="(link, id) in linkList" :key="id">
                         <a href="/" @click.prevent>{{link}}</a>
                     </li>
                 </ul>
             </div>
+                        <!-- search bar -->
             <div class="search">
                 <input 
                     v-model.trim="searchFilmSeries"
@@ -49,7 +52,12 @@ export default {
 
 header{
     background: rgb(20,20,20);
-    background: linear-gradient(0deg, rgba(20,20,20,0) 9%, rgba(20,20,20,0.8911939775910365) 46%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(
+                                    0deg,
+                                    rgba(20,20,20,0) 9%,
+                                    rgba(20,20,20,0.8911939775910365) 46%,
+                                    rgba(0,0,0,1) 100%
+                                );
     position: fixed;
     z-index: 1;
     width: 100%;
@@ -70,13 +78,12 @@ header{
         }
     }
     input{
-        width: 500px;
         height: 35px;
         padding-right: 150px;
         margin-right: 10px;
         border: none;
         color: white;
-        background-color: rgba(0,0,0,0.0001);
+        background-color: transparent;
         outline: none;
         border-bottom: 1px solid white;
         &:focus{
