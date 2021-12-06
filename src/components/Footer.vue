@@ -8,8 +8,8 @@
                 <a href="/" @click.prevent>{{link}}</a>
             </li>
             <li v-for="(social, id) in el.linkSocial" :key="id" class="mb-1 d-flex border">
-                <a href="/" @click.prevent>
-                    <i :class="`${social}`" class="fs-2"></i>
+                <a :href="social.path" target="_blank">
+                    <i :class="`${social.icon}`" class="fs-2"></i>
                 </a>
             </li>
         </ul>
@@ -40,7 +40,20 @@ export default {
                 },
                 {
                     title: 'I NOSTRI SOCIAL',
-                    linkSocial: ['fab fa-instagram','fab fa-linkedin','fab fa-facebook-square']
+                    linkSocial: [
+                        {
+                            icon: 'fab fa-instagram',
+                            path: 'https://www.instagram.com/fede.trimarco/'
+                        },
+                        {
+                            icon: 'fab fa-linkedin',
+                            path: 'https://www.linkedin.com/in/federico-trimarco-85923a228/'
+                        },
+                        {
+                            icon: 'fab fa-facebook-square',
+                            path: 'https://www.facebook.com/federico.trimarco.7'
+                        },
+                    ]
                 }
             ]
         }
