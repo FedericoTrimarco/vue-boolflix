@@ -35,7 +35,7 @@ export default {
     data(){
         return{
             searchFilmSeries: '',
-            linkList: ['Home','Serie Tv','Film','Nuovi e popolari','La mia lista'],
+            linkList: ['Home','Serie Tv','Film'],
         }
     },
     methods: {
