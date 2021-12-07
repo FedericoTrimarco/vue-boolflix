@@ -6,10 +6,10 @@
       <!-- SERIE TV / FILM -->
       <div v-if="MainMoviesList.length !== 0 || MainSeriesList.length !== 0">
         <!-- film -->
-        <TypologyTitle v-show="MainMoviesList.length !== 0" :mainArray="MainMoviesList" text="MOVIE"/>
+        <TypologyTitle :mainArray="MainMoviesList" text="MOVIE"/>
         <MainList :arrayList="MainMoviesList"/>
         <!-- serie -->
-        <TypologyTitle v-show="MainSeriesList.length !== 0" :mainArray="MainSeriesList" text="SERIE"/>
+        <TypologyTitle :mainArray="MainSeriesList" text="SERIE"/>
         <MainList :arrayList="MainSeriesList"/>
       </div>
         <!-- HOME -->
