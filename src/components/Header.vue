@@ -7,7 +7,7 @@
                        <!-- link-list -->
                 <ul class="d-flex ms-1 list-none">
                     <li v-for="(link, id) in linkList" :key="id">
-                        <a href="/" @click.prevent>{{link}}</a>
+                        <a href="/" @click.prevent="$emit('click', link)">{{link}}</a>
                     </li>
                 </ul>
             </div>
@@ -41,7 +41,7 @@ export default {
     methods: {
         clearInput(){
             this.searchFilmSeries = '';
-        }
+        },
     }
 }
 </script>

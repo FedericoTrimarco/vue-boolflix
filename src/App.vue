@@ -1,16 +1,20 @@
 <template>
   <div id="app" class="d-flex flex-column">
-    <Header @search="searchMovieSeries"/>
+    <Header @search="searchMovieSeries" @click="filter"/>
     
     <main class="pt-5 border flex-grow-1">
       <!-- SERIE TV / FILM -->
       <div v-if="MainMoviesList.length !== 0 || MainSeriesList.length !== 0">
         <!-- film -->
-        <TypologyTitle :mainArray="MainMoviesList" text="MOVIE"/>
-        <MainList :arrayList="MainMoviesList"/>
+        <div v-show="link === 'Film' || link === 'Home'">
+          <TypologyTitle :mainArray="MainMoviesList" text="MOVIE"/>
+          <MainList :arrayList="MainMoviesList"/>
+        </div>
         <!-- serie -->
-        <TypologyTitle :mainArray="MainSeriesList" text="SERIE"/>
-        <MainList :arrayList="MainSeriesList"/>
+        <div v-show="link === 'Serie Tv' || link === 'Home'">
+          <TypologyTitle :mainArray="MainSeriesList" text="SERIE"/>
+          <MainList :arrayList="MainSeriesList"/>
+        </div>
       </div>
         <!-- HOME -->
       <div v-else class="border text-center list-not-found h-100vh">
@@ -40,6 +44,7 @@ export default {
       MainMoviesList : [],
       MainSeriesList: [],
       searchFilmSeries: '',
+      link: 'Home',
     }
   },
   created() {
@@ -79,6 +84,10 @@ export default {
       this.searchFilmSeries = text;
       this.genMovieSeries()
     },
+    filter(el){
+      this.link = el;
+      console.log(el);
+    }
   }
 }
 </script>
