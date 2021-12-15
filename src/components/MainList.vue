@@ -43,10 +43,10 @@ export default {
     },
     methods: {
         scrollRight(){
-            this.$refs.list.scrollLeft += 500;
+            this.$refs.list.scrollLeft += 800;
         },
         scrollLeft(){
-            this.$refs.list.scrollLeft -= 500;
+            this.$refs.list.scrollLeft -= 800;
         },
         returnOriginalBgColor(){
             document.querySelector('#app').style.backgroundImage = "url('https://www.icolorpalette.com/download/solidcolorimage/141414_solid_color_background_icolorpalette.png')";

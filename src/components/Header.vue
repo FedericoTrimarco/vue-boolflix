@@ -34,6 +34,7 @@
                 </i>
             </div>
         </div>
+        <!-- CATEGORIES RESPONSIVE -->
         <div class="categories" ref="categories">
             <div>
                 <h1>CATEGORIES</h1>
@@ -61,7 +62,7 @@ export default {
             this.searchFilmSeries = '';
         },
         showCategories(){
-            document.querySelector('.categories').classList.toggle("active")
+            this.$refs.categories.classList.toggle("active")
         }
     },
 }

@@ -86,7 +86,6 @@ export default {
     },
     filter(el){
       this.link = el;
-      console.log(el);
     }
   }
 }
@@ -100,6 +99,7 @@ export default {
   flex-grow: 1;
   background-image: url('./assets/bg-gray.png');
   background-size: cover;
+  background-position: center;
   background-attachment: fixed;
   transition: background-image .5s linear 1s,
 }
