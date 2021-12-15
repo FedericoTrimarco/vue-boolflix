@@ -118,60 +118,105 @@ export default {
 <style scoped lang="scss">
 @import '@/style/utilities';
 @import '@/style/variables';
-.card{
-    border-radius: 20px;
-    position: relative;
-    overflow: hidden;
-    min-width: 400px;
-    max-width: 400px;
-    &:hover{
-        .film-serie-info{
-            display: block;
-        }
-    }
-    .film-serie-poster{
-        height: 100%;
-        img{
-            transition: filter 1.5s;
-        }
-        .poster{
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
-        .poster-error{
-            width: 100%;
-            height: 100%;
-        }
+    .card{
+        border-radius: 20px;
+        position: relative;
+        overflow: hidden;
+        min-width: 400px;
+        max-width: 400px;
         &:hover{
-            img{
-                filter: blur(.5rem);;
+            .film-serie-info{
+                display: block;
             }
         }
-    }
-    .film-serie-info{
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-color: rgba(0,0,0,0.7);
-        color: white;
-        transition: height .5s;
-        strong{
-            color: $primary-color;
-        }
-        li{
-            list-style: none;
-            margin-top: 6px;
+        .film-serie-poster{
+            height: 100%;
             img{
-                width: 40px;
-                height: 20px;
+                transition: filter 1.5s;
             }
-            
+            .poster{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+            .poster-error{
+                width: 100%;
+                height: 100%;
+            }
+            &:hover{
+                img{
+                    filter: blur(.5rem);
+                }
+            }
         }
-        .star{
-            color: #d4d424;
+        .film-serie-info{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            transition: height .5s;
+            strong{
+                color: $primary-color;
+            }
+            li{
+                list-style: none;
+                margin-top: 6px;
+                img{
+                    width: 40px;
+                    height: 20px;
+                }
+                
+            }
+            .star{
+                color: #d4d424;
+            }
+        }
+        
+    }
+    /**********
+    RESPONSIVE 
+    ***********/
+    /* desktop */
+    @media  screen and (max-width: 1400px) {
+        .card{
+            min-width: 300px;
+            max-width: 300px;
         }
     }
-}
+    /* tablet */
+    @media  screen and (max-width: 768px) {
+        .card{
+            min-width: 200px;
+            max-width: 200px;
+            &:hover{
+            .film-serie-info{
+                display: none;
+            }
+        }
+        .film-serie-poster:hover{
+            img{
+                filter: none;
+            }
+
+        }
+    }
+        
+    }
+    /* small-tablet */
+    @media  screen and (max-width: 639px) {
+        .card{
+            min-width: 200px;
+            max-width: 200px;
+        }
+    }
+    
+    /* phone */
+    @media  screen and (max-width: 560px){
+        .card{
+            min-width: 300px;
+            max-width: 300px;
+        }
+    }
 </style>

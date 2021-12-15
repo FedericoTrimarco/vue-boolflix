@@ -18,7 +18,7 @@
       </div>
         <!-- HOME -->
       <div v-else class="border text-center list-not-found h-100vh">
-        <img src="./assets/Boolflix-big-logo.png" alt="logo" class="border ">
+        <img src="./assets/Boolflix-big-logo.png" alt="logo" class="border w-50 mt-3">
       </div>
     </main>
     <Footer />
@@ -106,6 +106,7 @@ export default {
 .list-not-found{
   background-image: url('./assets/cinema-bg.jpg');
   background-size: cover;
+  background-position: center;
 }
 
 

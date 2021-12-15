@@ -43,10 +43,10 @@ export default {
     },
     methods: {
         scrollRight(){
-            this.$refs.list.scrollLeft += 1200;
+            this.$refs.list.scrollLeft += 500;
         },
         scrollLeft(){
-            this.$refs.list.scrollLeft -= 1200;
+            this.$refs.list.scrollLeft -= 500;
         },
         returnOriginalBgColor(){
             document.querySelector('#app').style.backgroundImage = "url('https://www.icolorpalette.com/download/solidcolorimage/141414_solid_color_background_icolorpalette.png')";
@@ -60,21 +60,35 @@ export default {
 <style scoped lang="scss">
 @import '@/style/utilities';
 @import '@/style/variables';
-.main-list{
-    .cards-list{
-        overflow-x: scroll;
-        &::-webkit-scrollbar {
+    .main-list{
+        .cards-list{
+            overflow-x: scroll;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+        i{
+            font-size: 50px;
+            color: rgba(211, 211, 211, 0.582);
+            transition: color .5s;
+            &:hover{
+                color: $primary-color;
+            }
+        }
+
+    }
+    /**********
+    RESPONSIVE 
+    ***********/
+    /* desktop */
+    /* tablet */
+    @media  screen and (max-width: 768px) {
+        .cards-list{
+            padding: 0 30px;
+        }
+        .main-list i{
             display: none;
         }
+        
     }
-    i{
-        font-size: 50px;
-        color: rgba(211, 211, 211, 0.582);
-        transition: color .5s;
-        &:hover{
-            color: $primary-color;
-        }
-    }
-
-}
 </style>

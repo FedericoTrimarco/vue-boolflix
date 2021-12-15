@@ -1,13 +1,13 @@
 <template>
   <footer class="pt-5">
-    <div class="d-flex justify-content-center">
+    <div class="d-flex flex-wrap justify-content-center container-2">
 
-        <ul class="list-none mb-3 border" v-for="(el, id) in linkFooter" :key="id">
+        <ul class="list-none mb-3 border link-list" v-for="(el, id) in linkFooter" :key="id">
             <h3 class="text-white mb-3">{{el.title}}</h3>
             <li v-for="(link, id) in el.linkList" :key="id" class="mb-1">
                 <a href="/" @click.prevent>{{link}}</a>
             </li>
-            <li v-for="(social, id) in el.linkSocial" :key="id" class="mb-1 d-flex border">
+            <li v-for="(social, id) in el.linkSocial" :key="id" class="social mb-1 border">
                 <a :href="social.path" target="_blank">
                     <i :class="`${social.icon}`" class="fs-2"></i>
                 </a>
@@ -64,32 +64,57 @@ export default {
 <style scoped lang="scss">
 @import '@/style/utilities';
 @import '@/style/variables';
-footer{
-    background-color: #141414f1;
-    border-top: 1px solid #ffffff23;
-    padding: 50px;
-    div{
-        margin: 0 auto;
-        ul{
-            width: (100% / 6);
-            a{
-                color: #ffffff79;
-                text-decoration: none;
-                &:hover{
-                    text-decoration: underline;
-                    color: $primary-color;
+    footer{
+        background-color: #141414f1;
+        border-top: 1px solid #ffffff23;
+        padding: 50px;
+        div{
+            margin: 0 auto;
+            ul{
+                width: (100% / 4);
+                a{
+                    color: #ffffff79;
+                    text-decoration: none;
+                    &:hover{
+                        text-decoration: underline;
+                        color: $primary-color;
+                    }
                 }
             }
         }
+        p{
+            letter-spacing: 5px;
+            span{
+                color: $primary-color;
+                font-size: 30px;
+                margin: 0 10px;
+            }
+        }
+        
     }
-    p{
-        letter-spacing: 5px;
-        span{
-            color: $primary-color;
-            font-size: 30px;
-            margin: 0 10px;
+    /**********
+    RESPONSIVE 
+    ***********/
+    /* tablet */
+    @media  screen and (max-width: 768px) {
+        .link-list{
+            width: calc(100% / 2);
+            .social{
+                display: inline-block;
+                margin-right: 10px;
+            }
         }
     }
-    
-}
+    /* small-tablet */
+    @media  screen and (max-width: 639px) {
+        .link-list{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: calc(100% / 1);
+            .social{
+                display: inline-block;
+            }
+        }
+    }
 </style>
