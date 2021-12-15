@@ -112,7 +112,7 @@ export default {
             }
         }
         .categories{
-            background: #000;
+            background: rgba(0, 0, 0, 0.5);
             height: 0px;
             overflow: hidden;
             transition: height 0.5s;
