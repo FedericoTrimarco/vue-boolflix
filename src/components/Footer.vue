@@ -1,23 +1,23 @@
 <template>
-  <footer class="pt-5">
-    <div class="d-flex flex-wrap justify-content-center container-2">
+    <footer class="pt-5">
+        <div class="d-flex flex-wrap justify-content-center container-2">
 
-        <ul class="list-none mb-3 border link-list" v-for="(el, id) in linkFooter" :key="id">
-            <h3 class="text-white mb-3">{{el.title}}</h3>
-            <li v-for="(link, id) in el.linkList" :key="id" class="mb-1">
-                <a href="/" @click.prevent>{{link}}</a>
-            </li>
-            <li v-for="(social, id) in el.linkSocial" :key="id" class="social mb-1 border">
-                <a :href="social.path" target="_blank">
-                    <i :class="`${social.icon}`" class="fs-2"></i>
-                </a>
-            </li>
-        </ul>
+            <ul class="list-none mb-3 border link-list" v-for="(el, id) in linkFooter" :key="id">
+                <h3 class="text-white mb-3">{{el.title}}</h3>
+                <li v-for="(link, id) in el.linkList" :key="id" class="mb-1">
+                    <a href="/" @click.prevent>{{link}}</a>
+                </li>
+                <li v-for="(social, id) in el.linkSocial" :key="id" class="social mb-1 border">
+                    <a :href="social.path" target="_blank">
+                        <i :class="`${social.icon}`" class="fs-2"></i>
+                    </a>
+                </li>
+            </ul>
 
-    </div>
-    <p class="text-center text-white">made with <span>&hearts;</span> by Federico</p>
+        </div>
+        <p class="text-center text-white">made with <span>&hearts;</span> by Federico</p>
 
-  </footer>
+    </footer>
 </template>
 
 <script>
@@ -32,7 +32,7 @@ export default {
                 },
                 {
                     title: 'COSA OFFRIAMO',
-                    linkList: ['Centro assistenza', 'Opportunità di lavoro', 'Preferenze per i coockie', 'Carte regalo']
+                    linkList: ['Centro assistenza', 'Opportunità di lavoro', 'Carte regalo']
                 },
                 {
                     title: 'CONTATTACI',
@@ -116,5 +116,11 @@ export default {
                 display: inline-block;
             }
         }
+    }
+    @media  screen and (max-width: 500px) {
+        p{
+            font-size: 15px;
+        }
+        
     }
 </style>

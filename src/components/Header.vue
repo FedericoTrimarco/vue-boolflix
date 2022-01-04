@@ -150,4 +150,12 @@ export default {
         }
         
     }
+    @media  screen and (max-width: 434px) {
+        .search{
+            input{
+                padding-right: 0;
+            }
+        }
+        
+    }
 </style>
