@@ -119,7 +119,7 @@ export default {
     }
     @media  screen and (max-width: 500px) {
         p{
-            font-size: 15px;
+            display: none;
         }
         
     }
