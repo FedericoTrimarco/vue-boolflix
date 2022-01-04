@@ -96,7 +96,7 @@ export default {
     RESPONSIVE 
     ***********/
     /* tablet */
-    @media  screen and (max-width: 768px) {
+    @media  screen and (max-width: 1200px) {
         .link-list{
             width: calc(100% / 2);
             .social{
