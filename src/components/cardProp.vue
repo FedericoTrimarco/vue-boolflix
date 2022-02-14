@@ -1,7 +1,7 @@
 <template>
     <div class="card mb-2 border" @mouseleave="removeInfo">
         <!-- POSTER -->
-        <div class="film-serie-poster pointer">
+        <div class="film-serie-poster">
             <img 
                 v-if="image !== null"
                 class="poster border"
@@ -18,12 +18,13 @@
         <!-- INFO -->
         <div 
             :class="{active : active == true}" 
-            class="film-serie-info border d-none h-100px"
+            class="film-serie-info border pointer d-none h-100px"
+            @click="showInfo"
         >
             <ul class="ms-1">
                         <!-- title & arro-top -->
                 <li class="text-center mb-4">
-                    <i class="arrow mb-1 fs-1 pointer fas fa-chevron-up" @click="showInfo"></i>
+                    <i class="arrow mb-1 fs-1 fas fa-chevron-up"></i>
                     <h1>{{ title }}</h1>
                 </li>
                         <!-- original-title -->
